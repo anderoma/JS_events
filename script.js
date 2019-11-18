@@ -46,14 +46,18 @@ navbar.addEventListener("dblclick", function(){
 })
 
 //Fonction 6
+let imgcard = document.getElementsByClassName("card-img-top");
 let cardView = document.getElementsByClassName("btn btn-sm btn-success");
-cardView[1].addEventListener("mousemove", function(){
-  if (textCard[1].style.display == "none"){
-    console.log("2");
-    textCard[1].style.display = "block";
-  }
-  else {
-    console.log("3");
-    textCard[1].style.display = "none";
-  }
-})
+
+for (let i = 0; i < cardView.length; i++) {
+  cardView[i].addEventListener("mousemove", function(){
+    if (textCard[i].style.display == "none"){
+      imgcard[i].style.width = "100%";
+      textCard[i].style.display = "block";
+    }
+    else {
+      imgcard[i].style.width = "20%";
+      textCard[i].style.display = "none";
+    }
+  })
+}
